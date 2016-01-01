@@ -1,4 +1,4 @@
-rankall<-function(o0utcome, num = "best"){
+rankall<-function(outcome, num = "best"){
   dataHospital <- read.csv("outcome-of-care-measures.csv", colClasses = "character", na.strings =c("NA","Not Available"))
   dataHospital[, 11] <- as.numeric(dataHospital[, 11])
   states<-dataHospital$State
@@ -7,9 +7,7 @@ rankall<-function(o0utcome, num = "best"){
   counter<-1
   stateData<-list()
   resultData<-list()
-  
   for (state in names_states){
-    print(state)
     DataForState<-dataHospital[dataHospital$State==state,]
     if(outcome=="heart attack"){
       chosenData<-as.numeric(DataForState$Hospital.30.Day.Death..Mortality..Rates.from.Heart.Attack)

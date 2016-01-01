@@ -55,3 +55,5 @@ num<-20
   ## rate
    source("rankhospital.R")
    result<-rankhospital("NC", "heart attack", "worst")
+   rankall("heart failure", 10)
+   rankall("pneumonia", "worst")
